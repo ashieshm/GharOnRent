@@ -149,7 +149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
             <div class="row form-group">
               <div class="col-md-12">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-4">
+                <input type="submit" value="Send Message" id="contact-submit" class="btn btn-primary py-3 px-4">
               </div>
             </div>
   
@@ -398,6 +398,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script src="js/circleaudioplayer.js"></script>
 
   <script src="js/main.js"></script>
-    
+   <script>
+document.getElementById("contact-submit").addEventListener("click", function(e) {
+    e.preventDefault();  // stops the form from instantly reloading
+    dataLayer.push({
+       'event': 'contact_form_submit'
+    });
+});
+</script>
+ 
   </body>
 </html>
